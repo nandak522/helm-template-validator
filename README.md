@@ -4,7 +4,7 @@ Validates Helm Templates (used by helm-template-validator Github Action)
 ## Build Image
 > `<version>` mentioned below is defined in `VERSION.txt` file.
 ```sh
-docker build --build-arg VERSION=3.2.0 -t nanda/helm-template-validator:<version> .
+docker build --build-arg VERSION=3.2.1 -t nanda/helm-template-validator:<version> .
 ```
 
 ---

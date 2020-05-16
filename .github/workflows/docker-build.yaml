@@ -18,7 +18,8 @@ jobs:
         run: |
           TAG=$(cat VERSION.txt)
           echo $TAG
-          docker build -t nanda/helm-template-validator:$TAG .
+          HELM_VERSION=$(cat HELM_VERSION.txt)
+          docker build --build-arg VERSION=$HELM_VERSION -t nanda/helm-template-validator:$TAG .
 
       - name: Log in to dockerhub registry
         run: docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_PASSWORD }}
