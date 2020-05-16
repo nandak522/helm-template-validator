@@ -4,6 +4,8 @@ on:
     branches:
       - master
     paths:
+      - ".github/workflows/**"
+      - "HELM_VERSION.txt"
       - "VERSION.txt"
 
 jobs:
