@@ -9,8 +9,9 @@ RUN apk add --update --no-cache tar wget ca-certificates \
     && wget -c ${BASE_URL}/${TAR_FILE} -O - | tar -xz \
     && mv linux-amd64/helm /usr/bin/helm \
     && chmod +x /usr/bin/helm \
+    && helm version \
     && rm -rf linux-amd64 \
-    && apk del curl \
+    && apk del wget \
     && rm -f /var/cache/apk/*
 
 CMD [ "helm" ]
